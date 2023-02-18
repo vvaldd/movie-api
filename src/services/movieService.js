@@ -2,7 +2,8 @@ import {axiosService} from "./axiosService";
 import {urls} from "../constants";
 
 const movieService = {
-    getAll: () => axiosService.get(urls.movie.movie),
+    getAll: (page) => axiosService.get(urls.movies.movies, {params:{page}}),
+    getById: (id) => axiosService.get(urls.movies.byId(id))
 }
 
 export {
