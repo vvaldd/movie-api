@@ -14,8 +14,6 @@ const MovieInfoPage = () => {
         dispatch(movieActions.getById({id: movieId}))
     }
 
-
-
     return (
         <div>
             {movieInfo &&

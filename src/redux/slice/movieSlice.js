@@ -1,5 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {movieService} from "../../services/movieService";
+
+import {movieService} from "../../services";
 
 const initialState = {
     movies: [],
@@ -10,7 +11,7 @@ const initialState = {
 };
 
 const getAll = createAsyncThunk(
-    'carSlice/getAll',
+    'movieSlice/getAll',
     async ({page}, thunkAPI) => {
         try {
             const {data} = await movieService.getAll(page);
@@ -23,7 +24,7 @@ const getAll = createAsyncThunk(
 );
 
 const getById = createAsyncThunk(
-    'carSlice/getById',
+    'movieSlice/getById',
     async ({id}, thunkAPI)=>{
         try {
             const {data} = await movieService.getById(id);

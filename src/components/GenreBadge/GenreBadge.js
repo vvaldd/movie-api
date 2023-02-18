@@ -1,7 +1,8 @@
-const GenreBadge = () => {
+const GenreBadge = ({genre}) => {
+
     return (
         <div>
-            GenreBadge
+            <div>{genre}</div>
         </div>
     );
 };
