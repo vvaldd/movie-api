@@ -1,5 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import {PosterPreview} from "../PosterPreview/PosterPreview";
+import {StarsRating} from "../StarsRating/StarsRating";
 
 const MovieInfoCard = ({movie}) => {
 
@@ -26,7 +27,7 @@ const MovieInfoCard = ({movie}) => {
             <div>popularity: {popularity}</div>
             <div>release_date: {release_date}</div>
             <div>title: {title}</div>
-            <div>vote_average: {vote_average}</div>
+            <StarsRating vote_average={vote_average}/>
             <div>vote_count: {vote_count}</div>
             <PosterPreview/>
             <button onClick={() => navigate(-1)}>Back</button>

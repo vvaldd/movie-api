@@ -18,7 +18,6 @@ const getAll = createAsyncThunk(
             console.log(data, genreId, page)
             return data
 
-
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }

@@ -1,7 +1,15 @@
-const StarsRating = () => {
+import StarRatings from "react-star-ratings/build/star-ratings";
+
+const StarsRating = ({vote_average}) => {
     return (
         <div>
-            StarsRating
+            <StarRatings
+                rating={vote_average}
+                numberOfStars={10}
+                starRatedColor="red"
+                starDimension="10px"
+                starSpacing="5px"
+            />
         </div>
     );
 };
