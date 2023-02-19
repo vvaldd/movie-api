@@ -1,22 +1,22 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {useSearchParams} from "react-router-dom";
+import {useParams, useSearchParams} from "react-router-dom";
 
 import {movieActions} from "../../redux/slice";
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
 
 const MoviesList = () => {
 
-    const {movies, page} =  useSelector(state => state.movies)
+    const {movies, page} = useSelector(state => state.movies)
     const dispatch = useDispatch();
     const [query, setQuery] = useSearchParams({page: '1'});
+    const {genreId} = useParams();
 
     useEffect(() => {
-        dispatch(movieActions.getAll({page:query.get('page')}))
-    }, [dispatch, query])
+        dispatch(movieActions.getAll({page: query.get('page'), genreId}))
+    }, [dispatch, query, genreId])
 
     return (
-
         <div>
             <button
                 disabled={page === 1}

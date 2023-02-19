@@ -24,6 +24,12 @@ const genreSlice = createSlice({
     name: 'genreSlice',
     initialState,
     reducers: {},
+    extraReducers: builder =>
+        builder
+            .addCase(getAll.fulfilled, (state, action) => {
+                const {genres} = action.payload
+                state.genres = genres
+            })
 })
 
 const {reducer:genreReducer} = genreSlice;

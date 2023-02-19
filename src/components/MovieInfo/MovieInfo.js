@@ -1,38 +1,25 @@
-import {useNavigate} from "react-router-dom";
-import {PosterPreview} from "../PosterPreview/PosterPreview";
+import {useParams} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
 
-const MovieInfo = ({movie}) => {
+import {MovieInfoCard} from "../../components";
+import {movieActions} from "../../redux/slice";
 
-    const navigate = useNavigate();
+const MovieInfo = () => {
 
-    const {
-        id,
-        original_language,
-        original_title,
-        overview,
-        popularity,
-        release_date,
-        title,
-        vote_average,
-        vote_count
-    } = movie;
+    const {movieInfo} = useSelector(state => state.movies);
+    const {movieId} = useParams();
+    const dispatch = useDispatch();
 
+    if(movieInfo === null) {
+        dispatch(movieActions.getById({id: movieId}))
+    }
     return (
         <div>
-            <div>id: {id}</div>
-            <div>original_language: {original_language}</div>
-            <div>original_title: {original_title}</div>
-            <div>overview: {overview}</div>
-            <div>popularity: {popularity}</div>
-            <div>release_date: {release_date}</div>
-            <div>title: {title}</div>
-            <div>vote_average: {vote_average}</div>
-            <div>vote_count: {vote_count}</div>
-            <PosterPreview/>
-            <button onClick={() => navigate(-1)}>Back</button>
+            {movieInfo &&
+                <MovieInfoCard movie={movieInfo}/>
+            }
         </div>
     );
 };
 
 export {MovieInfo};
-
