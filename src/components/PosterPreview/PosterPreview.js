@@ -1,9 +1,6 @@
 import {imageLink} from "../../config";
-import {useSelector} from "react-redux";
 
-const PosterPreview = () => {
-
-    const {movieInfo:{poster_path, title}} = useSelector(state => state.movies);
+const PosterPreview = ({title, poster_path}) => {
 
     return (
         <div>

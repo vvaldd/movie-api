@@ -13,6 +13,7 @@ const MovieInfoCard = ({movie}) => {
         overview,
         popularity,
         release_date,
+        poster_path,
         title,
         vote_average,
         vote_count
@@ -29,7 +30,7 @@ const MovieInfoCard = ({movie}) => {
             <div>title: {title}</div>
             <StarsRating vote_average={vote_average}/>
             <div>vote_count: {vote_count}</div>
-            <PosterPreview/>
+            <PosterPreview title={title} poster_path={poster_path}/>
             <button onClick={() => navigate(-1)}>Back</button>
         </div>
     );

@@ -3,8 +3,8 @@ import {useNavigate} from "react-router-dom";
 
 import {movieActions} from "../../redux/slice";
 import {GenreBadge} from "../GenreBadge/GenreBadge";
-import {imageLink} from "../../config";
 import {StarsRating} from "../StarsRating/StarsRating";
+import {PosterPreview} from "../PosterPreview/PosterPreview";
 
 
 const MoviesListCard = ({movie}) => {
@@ -12,7 +12,7 @@ const MoviesListCard = ({movie}) => {
     const {id,
         overview,
         popularity,
-        backdrop_path,
+        poster_path,
         release_date,
         title,
         vote_average, genre_ids } = movie;
@@ -23,7 +23,6 @@ const MoviesListCard = ({movie}) => {
     return (
         <div >
             <div onClick={() => navigate(id.toString(), dispatch(movieActions.setMovieInfo(movie)))}>
-                <img src={`${imageLink}${backdrop_path}`} alt={title}/>
                 <div>id: {id}</div>
                 <div>overview: {overview}</div>
                 <div>popularity: {popularity}</div>
@@ -32,8 +31,10 @@ const MoviesListCard = ({movie}) => {
                 {
                     genre_ids.map((genre, index) => <GenreBadge key={index} genre={genre}/>)
                 }
+                <PosterPreview title={title} poster_path={poster_path}/>
+                <StarsRating vote_average={vote_average}/>
             </div>
-            <StarsRating vote_average={vote_average}/>
+
         </div>
     );
 };

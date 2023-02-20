@@ -1,6 +1,6 @@
 import {Navigate, Route, Routes} from "react-router-dom";
 
-import {GenresPage, MovieInfoPage, MoviesPage, NotFoundPage} from "./pages";
+import {GenresPage, MovieInfoPage, MoviesPage, NotFoundPage, SearchPage} from "./pages";
 import {MainLayout} from "./layout/MainLayout";
 
 const App = () => {
@@ -14,6 +14,8 @@ const App = () => {
                     <Route path={'genres'} element={<GenresPage/>}/>
                     <Route path={'genres/:genreId'} element={<MoviesPage/>}/>
                     <Route path={'genres/:genreId/:movieId'} element={<MovieInfoPage/>}/>
+                    <Route path ={'search'} element={<SearchPage/>}/>
+                    <Route path ={'search/:movieId'} element={<MovieInfoPage/>}/>
                     <Route path={'*'} element={<NotFoundPage/>}/>
                 </Route>
             </Routes>
