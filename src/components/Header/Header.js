@@ -6,7 +6,7 @@ import css from './Header.module.css';
 const Header = () => {
     return (
         <div className={css.Header}>
-            <NavLink to={"movie"}>movies</NavLink>
+            <NavLink to={"movies"}>movies</NavLink>
             <NavLink to={"genres"}>genres</NavLink>
             <UserInfo/>
         </div>

@@ -1,7 +1,9 @@
 const UserInfo = () => {
     return (
         <div>
-            UserInfo
+            <div>
+                VR
+            </div>
         </div>
     );
 };
