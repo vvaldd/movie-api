@@ -1,7 +1,7 @@
 import {MoviesList} from "../../components";
 
+const AllMoviesPage = () => {
 
-const MoviesPage = () => {
     return (
         <div>
             <MoviesList/>
@@ -9,4 +9,4 @@ const MoviesPage = () => {
     );
 };
 
-export {MoviesPage};
+export {AllMoviesPage};

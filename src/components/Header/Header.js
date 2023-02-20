@@ -5,6 +5,7 @@ import css from './Header.module.css';
 import {Search} from "../Search/Search";
 
 const Header = () => {
+
     return (
         <div className={css.Header}>
             <NavLink to={"movies"}>movies</NavLink>

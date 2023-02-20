@@ -4,7 +4,6 @@ import {useEffect} from "react";
 import {genreAction} from "../../redux/slice";
 import {GenreListCard} from "../GenreListCard/GenreListCard";
 
-
 const GenresList = () => {
 
     const {genres} =  useSelector(state => state.genres)

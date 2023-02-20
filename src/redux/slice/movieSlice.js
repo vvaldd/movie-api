@@ -89,9 +89,10 @@ const {reducer:movieReducer, actions: {setMovieInfo, setSearchMovie}} = movieSli
 const movieActions = {
     getAll,
     getById,
+    getSearch,
     setMovieInfo,
-    setSearchMovie,
-    getSearch
+    setSearchMovie
+
 }
 
 export {

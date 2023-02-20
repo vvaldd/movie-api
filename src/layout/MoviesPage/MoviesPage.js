@@ -2,7 +2,7 @@ import {Outlet} from "react-router-dom";
 
 import {Header} from "../../components";
 
-const MainLayout = () => {
+const MoviesPage = () => {
     return (
         <div>
             <Header/>
@@ -11,4 +11,4 @@ const MainLayout = () => {
     );
 };
 
-export {MainLayout};
+export {MoviesPage};
