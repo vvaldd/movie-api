@@ -3,6 +3,7 @@ import {NavLink} from "react-router-dom";
 import {UserInfo} from "../UserInfo/UserInfo";
 import css from './Header.module.css';
 import {Search} from "../Search/Search";
+import {DarkMode} from "../DarkMode/DarkMode";
 
 const Header = () => {
 
@@ -11,6 +12,7 @@ const Header = () => {
             <NavLink to={"movies"}>movies</NavLink>
             <NavLink to={"genres"}>genres</NavLink>
             <Search/>
+            <DarkMode/>
             <UserInfo/>
         </div>
     );

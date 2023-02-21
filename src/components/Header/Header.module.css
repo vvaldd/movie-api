@@ -1,6 +1,6 @@
 .Header{
     min-height: 50px;
-    background-color: blue;
+    background-color: mediumaquamarine;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -12,7 +12,7 @@
     font-size: 25px;
 }
 
-/*.Header a[class='active']{*/
-/*    color: red;*/
-/*}*/
+.Header a[class='active']{
+    color: crimson;
+}
 

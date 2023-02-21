@@ -12,7 +12,6 @@ const MoviesList = () => {
     const [query, setQuery] = useSearchParams({page: '1'});
     const {genreId} = useParams();
 
-
     useEffect(() => {
         dispatch(movieActions.getAll({page: query.get('page'), genreId}))
     }, [dispatch, query, genreId])
