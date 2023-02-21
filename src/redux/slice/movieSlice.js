@@ -31,6 +31,7 @@ const getById = createAsyncThunk(
     async ({id}, thunkAPI)=>{
         try {
             const {data} = await movieService.getById(id);
+            console.log(data)
             return data
 
         }catch (e) {

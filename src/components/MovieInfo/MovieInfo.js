@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import {MovieInfoCard} from "../../components";
 import {movieActions} from "../../redux/slice";
+import {useEffect} from "react";
 
 const MovieInfo = () => {
 
@@ -10,9 +11,15 @@ const MovieInfo = () => {
     const {movieId} = useParams();
     const dispatch = useDispatch();
 
-    if(movieInfo === null) {
+    useEffect(() => {
         dispatch(movieActions.getById({id: movieId}))
-    }
+    },[dispatch, movieId])
+
+    // if(movieInfo === null) {
+    //     dispatch(movieActions.getById({id: movieId}))
+    // }
+
+
     return (
         <div>
             {movieInfo &&

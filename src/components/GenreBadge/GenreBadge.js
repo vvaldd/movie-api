@@ -1,8 +1,8 @@
 const GenreBadge = ({genre}) => {
-
+    console.log(genre)
     return (
         <div>
-            <div>{genre}</div>
+            <div>{genre.name}</div>
         </div>
     );
 };

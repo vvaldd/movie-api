@@ -2,6 +2,7 @@ import {useNavigate} from "react-router-dom";
 
 import {PosterPreview} from "../PosterPreview/PosterPreview";
 import {StarsRating} from "../StarsRating/StarsRating";
+import {GenreBadge} from "../GenreBadge/GenreBadge";
 
 const MovieInfoCard = ({movie}) => {
 
@@ -17,8 +18,10 @@ const MovieInfoCard = ({movie}) => {
         poster_path,
         title,
         vote_average,
-        vote_count
+        vote_count,
+        genres
     } = movie;
+    console.log(genres)
 
     return (
         <div>
@@ -31,6 +34,9 @@ const MovieInfoCard = ({movie}) => {
             <div>title: {title}</div>
             <StarsRating vote_average={vote_average}/>
             <div>vote_count: {vote_count}</div>
+            {genres &&
+                genres.map(genre => <GenreBadge key={genre.id} genre={genre}/>)
+            }
             <PosterPreview title={title} poster_path={poster_path}/>
             <button onClick={() => navigate(-1)}>Back</button>
         </div>
