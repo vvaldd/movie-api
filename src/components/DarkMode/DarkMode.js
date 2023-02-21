@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 
 import "./DarkMode.css";
-import {handledarkMode} from "./darkModeAction";
+import {handledarkMode} from "../../redux/reducers";
 
 const DarkMode = () => {
 

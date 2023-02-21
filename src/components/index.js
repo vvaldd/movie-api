@@ -1,5 +1,4 @@
 export * from './DarkMode/DarkMode';
-export * from './DarkMode/darkModeReducer';
 export * from './Header/Header';
 export * from './GenreBadge/GenreBadge';
 export * from './GentresList/GenresList';
