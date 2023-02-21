@@ -21,7 +21,6 @@ const MovieInfoCard = ({movie}) => {
         vote_count,
         genres
     } = movie;
-    console.log(genres)
 
     return (
         <div>

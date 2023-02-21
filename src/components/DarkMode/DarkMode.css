@@ -14,7 +14,7 @@
 #darkmode .label {
     width: 39px;
     height: 14px;
-    background-color:green;
+    background-color:seagreen;
     display: flex;
     border-radius:50px;
     align-items: center;
@@ -28,7 +28,7 @@
 #darkmode .ball {
     width: 21px;
     height: 20px;
-    background-color: mediumseagreen;
+    background-color: mediumaquamarine;
     position: absolute;
     top: 2px;
     left: 2px;

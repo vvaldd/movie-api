@@ -2,7 +2,6 @@ import {useNavigate} from "react-router-dom";
 
 const GenreBadge = ({genre}) => {
     const {id, name} = genre;
-    console.log(genre)
 
     const navigate = useNavigate();
 
