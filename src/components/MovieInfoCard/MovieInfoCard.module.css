@@ -1,8 +1,5 @@
 .infoCard{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+        text-align: center;
 }
 
 .infoCard button{
@@ -13,9 +10,15 @@
     top: 50%;
     right: 5px;
     border-radius: 30px;
+    margin: 10px;
 }
 
-.infoCard p{
+.image{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
 
-    text-align: justify;
+.infoCard h5{
+    font-size: 20px;
 }

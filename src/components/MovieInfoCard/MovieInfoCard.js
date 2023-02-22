@@ -23,7 +23,7 @@ const MovieInfoCard = ({movie}) => {
     return (
         <div className={css.infoCard}>
             <h1>{title}</h1>
-            <div>
+            <div className={css.image}>
                 <PosterPreview title={title} poster_path={poster_path}/>
                 <div>
                     {genres &&
@@ -33,10 +33,9 @@ const MovieInfoCard = ({movie}) => {
             </div>
             <StarsRating vote_average={vote_average}/>
             <h5>Original language: {original_language}</h5>
-            <h5>popularity: {popularity}</h5>
+            <h5>Popularity: {popularity}</h5>
             <h5>Release date: {release_date}</h5>
             <p>{overview}</p>
-
             <button onClick={() => navigate(-1)}>Back</button>
         </div>
     );
