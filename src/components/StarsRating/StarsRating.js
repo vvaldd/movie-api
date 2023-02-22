@@ -6,8 +6,8 @@ const StarsRating = ({vote_average}) => {
             <StarRatings
                 rating={vote_average}
                 numberOfStars={10}
-                starRatedColor="red"
-                starDimension="10px"
+                starRatedColor="orange"
+                starDimension="20px"
                 starSpacing="5px"
             />
         </div>

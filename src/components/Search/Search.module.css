@@ -1,0 +1,23 @@
+.Search input{
+    font-size: 20px;
+    margin: 5px;
+    border-radius: 30px;
+}
+
+.Search button {
+    height: 30px;
+    background: mediumseagreen;
+    font-size: 20px;
+    color: snow;
+    border-radius: 30px;
+
+}
+
+.Search input:focus{
+    box-shadow: 5px 5px 5px 5px aquamarine;
+}
+
+.Search button:hover{
+    background: mediumaquamarine;
+}
+

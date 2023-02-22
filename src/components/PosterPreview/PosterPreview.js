@@ -1,11 +1,11 @@
 import {imageLink} from "../../config";
+import css from "./PosterPreview.module.css"
 
 const PosterPreview = ({title, poster_path}) => {
 
     return (
         <div>
-            <img src={`${imageLink}${poster_path}`} alt={title}/>
-
+            <img className={css.image} src={`${imageLink}${poster_path}`} alt={title}/>
         </div>
 
     );

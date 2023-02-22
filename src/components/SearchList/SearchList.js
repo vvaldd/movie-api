@@ -4,6 +4,7 @@ import {useSearchParams} from "react-router-dom";
 
 import {movieActions} from "../../redux/slice";
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
+import css from "../MoviesList/MoviesList.module.css";
 
 const SearchList = () => {
 
@@ -16,11 +17,11 @@ const SearchList = () => {
     }, [dispatch, query, searchParams])
 
     return (
-        <div>
-            <button
+        <div className={css.component}>
+            <button className={css.buttonP}
                 disabled={pageSearch === 1}
                 onClick={()=> setQuery(query=>({page:+query.get('page')-1}))}>Prev</button>
-            <button
+            <button className={css.buttonN}
                 disabled={pageSearch === 500}
                 onClick={()=> setQuery(query=>({page:+query.get('page')+1}))}>Next</button>
             {

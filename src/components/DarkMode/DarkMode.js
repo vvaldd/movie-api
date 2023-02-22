@@ -18,7 +18,6 @@ const DarkMode = () => {
     };
 
     useEffect(() => {
-        //changing color of body with darkmode in useEffect
         document.body.style.backgroundColor = isdarkMode ? "#292c35" : "#fff";
         document.body.style.color = isdarkMode ? "white" : "black"
     }, [isdarkMode]);

@@ -9,8 +9,8 @@ const Header = () => {
 
     return (
         <div className={css.Header}>
-            <NavLink to={"movies"}>movies</NavLink>
-            <NavLink to={"genres"}>genres</NavLink>
+            <NavLink to={"movies"}>Movies</NavLink>
+            <NavLink to={"genres"}>Genres</NavLink>
             <Search/>
             <DarkMode/>
             <UserInfo/>

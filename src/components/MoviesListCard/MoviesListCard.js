@@ -4,33 +4,31 @@ import {useNavigate} from "react-router-dom";
 import {movieActions} from "../../redux/slice";
 import {StarsRating} from "../StarsRating/StarsRating";
 import {PosterPreview} from "../PosterPreview/PosterPreview";
-
+import css from "./MoviesListCard.module.css"
 
 const MoviesListCard = ({movie}) => {
 
-    const {id,
+    const {
+        id,
         overview,
-        popularity,
         poster_path,
         release_date,
         title,
-        vote_average} = movie;
+        vote_average
+    } = movie;
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     return (
-        <div >
-            <div onClick={() => navigate(id.toString(), dispatch(movieActions.setMovieInfo(movie)))}>
-                <div>id: {id}</div>
-                <div>overview: {overview}</div>
-                <div>popularity: {popularity}</div>
-                <div>release_date: {release_date}</div>
-                <div>title: {title}</div>
-                <PosterPreview title={title} poster_path={poster_path}/>
-                <StarsRating vote_average={vote_average}/>
-            </div>
-
+        <div className={css.card}>
+             <div onClick={() => navigate(id.toString(), dispatch(movieActions.setMovieInfo(movie)))}>
+                 <h3> {title}</h3>
+                 <PosterPreview title={title} poster_path={poster_path}/>
+                 <h5>Release date: {release_date}</h5>
+                 <p>Overview: {overview}</p>
+                 <StarsRating vote_average={vote_average}/>
+             </div>
         </div>
     );
 };

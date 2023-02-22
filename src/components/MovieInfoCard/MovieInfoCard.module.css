@@ -1,0 +1,21 @@
+.infoCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.infoCard button{
+    width: 100px;
+    background: mediumaquamarine;
+    font-size: 20px;
+    color: snow;
+    top: 50%;
+    right: 5px;
+    border-radius: 30px;
+}
+
+.infoCard p{
+
+    text-align: justify;
+}

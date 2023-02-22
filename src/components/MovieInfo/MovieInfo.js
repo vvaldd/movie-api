@@ -15,11 +15,6 @@ const MovieInfo = () => {
         dispatch(movieActions.getById({id: movieId}))
     },[dispatch, movieId])
 
-    // if(movieInfo === null) {
-    //     dispatch(movieActions.getById({id: movieId}))
-    // }
-
-
     return (
         <div>
             {movieInfo &&

@@ -3,6 +3,7 @@ import {useEffect} from "react";
 
 import {genreAction} from "../../redux/slice";
 import {GenreListCard} from "../GenreListCard/GenreListCard";
+import css from "../MoviesList/MoviesList.module.css"
 
 const GenresList = () => {
 
@@ -14,7 +15,7 @@ const GenresList = () => {
     }, [dispatch])
 
     return (
-        <div>
+        <div className={css.component}>
             {
                 genres.map(genre => <GenreListCard key={genre.id} genre={genre}/>)
             }
