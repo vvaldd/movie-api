@@ -8,7 +8,7 @@ const GenreListCard = ({genre}) => {
     const navigate = useNavigate();
 
     return (
-        <div className={css.genreCard} onClick={() => navigate(id.toString())}>
+        <div className={css.GenreCard} onClick={() => navigate(id.toString())}>
             <h1>{name}</h1>
         </div>
     );

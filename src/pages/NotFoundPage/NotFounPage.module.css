@@ -1,0 +1,13 @@
+.NotFoundPage{
+    text-align: center;
+    color: mediumaquamarine;
+}
+
+.NotFoundPage h1{
+    margin-top: 300px;
+    font-size: 50px;
+}
+
+.NotFoundPage h5{
+    font-size: 30px;
+}

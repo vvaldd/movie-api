@@ -5,7 +5,7 @@ const PosterPreview = ({title, poster_path}) => {
 
     return (
         <div>
-            <img className={css.image} src={`${imageLink}${poster_path}`} alt={title}/>
+            <img className={css.Image} src={`${imageLink}${poster_path}`} alt={title}/>
         </div>
 
     );

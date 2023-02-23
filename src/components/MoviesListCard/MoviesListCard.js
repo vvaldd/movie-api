@@ -21,7 +21,7 @@ const MoviesListCard = ({movie}) => {
     const navigate = useNavigate();
 
     return (
-        <div className={css.card}>
+        <div className={css.Card}>
              <div onClick={() => navigate(id.toString(), dispatch(movieActions.setMovieInfo(movie)))}>
                  <h3> {title}</h3>
                  <PosterPreview title={title} poster_path={poster_path}/>

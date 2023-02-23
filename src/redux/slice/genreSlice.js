@@ -5,6 +5,7 @@ import {genreService} from "../../services";
 const initialState = {
     genres: [],
     errors: null,
+    loading: null
 };
 
 const getAll = createAsyncThunk(
@@ -29,6 +30,19 @@ const genreSlice = createSlice({
             .addCase(getAll.fulfilled, (state, action) => {
                 const {genres} = action.payload
                 state.genres = genres
+                state.loading = false
+            })
+            .addCase(getAll.pending, (state) => {
+                state.loading = true
+
+            })
+            .addCase(getAll.rejected, (state, action) => {
+                state.errors = action.payload
+                state.loading = false
+            })
+            .addDefaultCase((state, action) => {
+                const [actionStatus] = action.type.split('/').slice(-1);
+                state.loading = actionStatus === 'pending';
             })
 })
 

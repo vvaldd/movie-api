@@ -4,12 +4,12 @@ import {useSearchParams} from "react-router-dom";
 
 import {movieActions} from "../../redux/slice";
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
-import css from "../MoviesList/MoviesList.module.css";
+import css from "./SearchList.module.css";
 
 const SearchList = () => {
 
     const [query, setQuery] = useSearchParams({page: '1'});
-    const {moviesSearch, pageSearch, searchParams:{searchParams}} = useSelector(state => state.movies)
+    const {moviesSearch, pageSearch, searchParams:{searchParams}, loading} = useSelector(state => state.movies)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -17,16 +17,17 @@ const SearchList = () => {
     }, [dispatch, query, searchParams])
 
     return (
-        <div className={css.component}>
-            <button className={css.buttonP}
+        <div className={css.ComponentS}>
+            <button className={css.ButtonP}
                 disabled={pageSearch === 1}
                 onClick={()=> setQuery(query=>({page:+query.get('page')-1}))}>Prev</button>
-            <button className={css.buttonN}
+            <button className={css.ButtonN}
                 disabled={pageSearch === 500}
                 onClick={()=> setQuery(query=>({page:+query.get('page')+1}))}>Next</button>
             {
                 moviesSearch.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)
             }
+            {loading && <div className={css.Loading}></div>}
         </div>
     );
 };

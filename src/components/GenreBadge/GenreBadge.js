@@ -8,7 +8,7 @@ const GenreBadge = ({genre}) => {
     const navigate = useNavigate();
 
     return (
-        <div className={css.badge} onClick={() => navigate(`/genres/${id}`)}>
+        <div className={css.Badge} onClick={() => navigate(`/genres/${id}`)}>
             <h3>{name}</h3>
         </div>
     );

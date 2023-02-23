@@ -21,9 +21,9 @@ const MovieInfoCard = ({movie}) => {
     } = movie;
 
     return (
-        <div className={css.infoCard}>
+        <div className={css.InfoCard}>
             <h1>{title}</h1>
-            <div className={css.image}>
+            <div className={css.Image}>
                 <PosterPreview title={title} poster_path={poster_path}/>
                 <div>
                     {genres &&

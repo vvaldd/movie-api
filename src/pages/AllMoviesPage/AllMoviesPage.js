@@ -1,10 +1,9 @@
 import {MoviesList} from "../../components";
-import css from "./AllMoviesPage.module.css"
 
 const AllMoviesPage = () => {
 
     return (
-        <div className={css.AllMoviesPage}>
+        <div>
             <MoviesList/>
         </div>
     );

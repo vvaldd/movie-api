@@ -7,8 +7,9 @@ const initialState = {
     page: null,
     total_pages: null,
     errors: null,
+    loading: null,
     movieInfo: null,
-    searchParams: null,
+    searchParams: [],
     moviesSearch: [],
     pageSearch: null
 };
@@ -71,15 +72,39 @@ const movieSlice = createSlice({
                 const {page, results} = action.payload
                 state.movies = results
                 state.page = page
+                state.loading = false
+            })
+            .addCase(getAll.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(getAll.rejected, (state, action) => {
+                state.errors = action.payload
+                state.loading = false
             })
             .addCase(getById.fulfilled, (state, action) => {
                 state.movieInfo = action.payload
+                state.loading = false
+            })
+            .addCase(getById.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(getById.rejected, (state, action) => {
+                state.errors = action.payload
+                state.loading = false
             })
             .addCase(getSearch.fulfilled, (state, action) => {
                 const {page, results} = action.payload
                 state.moviesSearch = results
                 state.pageSearch = page
+                state.loading = false
             })
+            .addCase(getSearch.pending, (state) => {
+                state.loading = true
+            })
+            .addDefaultCase((state, action) => {
+            const [actionStatus] = action.type.split('/').slice(-1);
+            state.loading = actionStatus === 'pending';
+        })
 
 });
 

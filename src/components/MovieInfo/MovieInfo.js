@@ -5,6 +5,8 @@ import {MovieInfoCard} from "../../components";
 import {movieActions} from "../../redux/slice";
 import {useEffect} from "react";
 
+import css from "./MovieInfo.module.css"
+
 const MovieInfo = () => {
 
     const {movieInfo} = useSelector(state => state.movies);
@@ -16,10 +18,12 @@ const MovieInfo = () => {
     },[dispatch, movieId])
 
     return (
-        <div>
-            {movieInfo &&
-                <MovieInfoCard movie={movieInfo}/>
-            }
+        <div className={css.Wrap}>
+            <div className={css.Card}>
+                {movieInfo &&
+                    <MovieInfoCard movie={movieInfo}/>
+                }
+            </div>
         </div>
     );
 };

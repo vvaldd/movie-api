@@ -1,16 +1,16 @@
-.card{
+.Card{
     width: 300px;
     display: flex;
     flex-direction: column;
     margin: 20px;
 }
 
-.card h3{
+.Card h3{
     height: 30px;
     text-align: center;
 }
 
-.card p{
+.Card p{
     height: 250px;
     text-align: justify;
     overflow: hidden

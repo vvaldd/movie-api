@@ -1,8 +1,9 @@
-.genreCard{
+.GenreCard{
     width: 300px;
     height: 100px;
     border: 1px solid mediumseagreen;
     text-align: center;
     margin: 10px;
+    padding-top: 5px;
     border-radius: 30px;
 }

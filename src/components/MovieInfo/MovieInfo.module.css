@@ -1,0 +1,12 @@
+.Wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Card{
+    width: 33%;
+    border-radius: 30px;
+    border: 1px solid mediumaquamarine;
+}
+

@@ -9,7 +9,7 @@ import css from "./MoviesList.module.css"
 
 const MoviesList = () => {
 
-    const {movies, page} = useSelector(state => state.movies)
+    const {movies, page, loading} = useSelector(state => state.movies)
     const dispatch = useDispatch();
     const [query, setQuery] = useSearchParams({page: '1'});
     const {genreId} = useParams();
@@ -20,16 +20,17 @@ const MoviesList = () => {
 
     return (
         <div>
-            <div className={css.component}>
+            <div className={css.ComponentM}>
                 {
                     movies.map(movie => <MoviesListCard className={'qwe'} key={movie.id} movie={movie}/>)
                 }
+                {loading && <div className={css.Loading}></div>}
             </div>
-            <button className={css.buttonP}
+            <button className={css.ButtonP}
                     disabled={page === 1}
                     onClick={() => setQuery(query => ({page: +query.get('page') - 1}))}>Prev
             </button>
-            <button className={css.buttonN}
+            <button className={css.ButtonN}
                     disabled={page === 500}
                     onClick={() => setQuery(query => ({page: +query.get('page') + 1}))}>Next
             </button>
