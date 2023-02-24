@@ -10,9 +10,9 @@ const MovieInfoCard = ({movie}) => {
     const navigate = useNavigate();
 
     const {
-        original_language,
+        budget,
         overview,
-        popularity,
+        runtime,
         release_date,
         poster_path,
         title,
@@ -32,8 +32,8 @@ const MovieInfoCard = ({movie}) => {
                 </div>
             </div>
             <StarsRating vote_average={vote_average}/>
-            <h5>Original language: {original_language}</h5>
-            <h5>Popularity: {popularity}</h5>
+            <h5>Budget: {budget} $</h5>
+            <h5>Runtime: {runtime} min</h5>
             <h5>Release date: {release_date}</h5>
             <p>{overview}</p>
             <button onClick={() => navigate(-1)}>Back</button>

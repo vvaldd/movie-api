@@ -6,10 +6,9 @@ import {movieActions} from "../../redux/slice";
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
 import css from "./MoviesList.module.css"
 
-
 const MoviesList = () => {
 
-    const {movies, page, loading} = useSelector(state => state.movies)
+    const {movies, page, loading, errors} = useSelector(state => state.movies)
     const dispatch = useDispatch();
     const [query, setQuery] = useSearchParams({page: '1'});
     const {genreId} = useParams();
@@ -34,6 +33,7 @@ const MoviesList = () => {
                     disabled={page === 500}
                     onClick={() => setQuery(query => ({page: +query.get('page') + 1}))}>Next
             </button>
+            {errors && <div className={css.Errors}>{{errors}}</div>}}
         </div>
     );
 };

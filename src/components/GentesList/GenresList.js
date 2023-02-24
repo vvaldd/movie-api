@@ -7,7 +7,7 @@ import css from "./GenresList.module.css"
 
 const GenresList = () => {
 
-    const {genres, loading} =  useSelector(state => state.genres)
+    const {genres, loading, errors} =  useSelector(state => state.genres)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -20,8 +20,8 @@ const GenresList = () => {
                 genres.map(genre => <GenreListCard key={genre.id} genre={genre}/>)
             }
             {loading && <div className={css.Loading}></div>}
+            {errors && <div className={css.Errors}>{errors}</div>}}
         </div>
-
     );
 };
 

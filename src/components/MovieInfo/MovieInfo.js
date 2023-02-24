@@ -9,7 +9,7 @@ import css from "./MovieInfo.module.css"
 
 const MovieInfo = () => {
 
-    const {movieInfo} = useSelector(state => state.movies);
+    const {movieInfo, errors} = useSelector(state => state.movies);
     const {movieId} = useParams();
     const dispatch = useDispatch();
 
@@ -24,6 +24,7 @@ const MovieInfo = () => {
                     <MovieInfoCard movie={movieInfo}/>
                 }
             </div>
+            {errors && <div className={css.Errors}>{{errors}}</div>}}
         </div>
     );
 };

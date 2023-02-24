@@ -5,7 +5,6 @@ import {movieService} from "../../services";
 const initialState = {
     movies: [],
     page: null,
-    total_pages: null,
     errors: null,
     loading: null,
     movieInfo: null,
@@ -32,7 +31,6 @@ const getById = createAsyncThunk(
     async ({id}, thunkAPI)=>{
         try {
             const {data} = await movieService.getById(id);
-            console.log(data)
             return data
 
         }catch (e) {
@@ -46,7 +44,6 @@ const getSearch = createAsyncThunk(
     async ({searchParams, page}, thunkAPI) => {
         try {
             const {data} = await movieService.getSearch(searchParams, page);
-            console.log(data)
             return data
 
         } catch (e) {

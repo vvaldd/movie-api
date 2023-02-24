@@ -2,8 +2,8 @@ import {BsMoonStarsFill, BsFillSunFill} from "react-icons/bs";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 
-import "./DarkMode.css";
 import {handledarkMode} from "../../redux/reducers";
+import "./DarkMode.css";
 
 const DarkMode = () => {
 

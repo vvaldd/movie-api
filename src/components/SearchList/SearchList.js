@@ -9,7 +9,7 @@ import css from "./SearchList.module.css";
 const SearchList = () => {
 
     const [query, setQuery] = useSearchParams({page: '1'});
-    const {moviesSearch, pageSearch, searchParams:{searchParams}, loading} = useSelector(state => state.movies)
+    const {moviesSearch, pageSearch, searchParams:{searchParams}, loading, errors} = useSelector(state => state.movies)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -28,6 +28,7 @@ const SearchList = () => {
                 moviesSearch.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)
             }
             {loading && <div className={css.Loading}></div>}
+            {errors && <div className={css.Errors}>{{errors}}</div>}}
         </div>
     );
 };
