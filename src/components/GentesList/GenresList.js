@@ -20,7 +20,7 @@ const GenresList = () => {
                 genres.map(genre => <GenreListCard key={genre.id} genre={genre}/>)
             }
             {loading && <div className={css.Loading}></div>}
-            {errors && <div className={css.Errors}>{errors}</div>}}
+            {errors && <div className={css.Errors}>{JSON.stringify(errors)}</div>}
         </div>
     );
 };

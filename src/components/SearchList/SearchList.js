@@ -28,7 +28,7 @@ const SearchList = () => {
                 moviesSearch.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)
             }
             {loading && <div className={css.Loading}></div>}
-            {errors && <div className={css.Errors}>{{errors}}</div>}}
+            {errors && <div className={css.Errors}>{JSON.stringify(errors)}</div>}
         </div>
     );
 };

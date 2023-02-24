@@ -24,7 +24,7 @@ const MovieInfo = () => {
                     <MovieInfoCard movie={movieInfo}/>
                 }
             </div>
-            {errors && <div className={css.Errors}>{{errors}}</div>}}
+            {errors && <div className={css.Errors}>{JSON.stringify(errors)}</div>}
         </div>
     );
 };

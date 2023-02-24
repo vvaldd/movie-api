@@ -33,7 +33,7 @@ const MoviesList = () => {
                     disabled={page === 500}
                     onClick={() => setQuery(query => ({page: +query.get('page') + 1}))}>Next
             </button>
-            {errors && <div className={css.Errors}>{{errors}}</div>}}
+            {errors && <div className={css.Errors}>{JSON.stringify(errors)}</div>}
         </div>
     );
 };
