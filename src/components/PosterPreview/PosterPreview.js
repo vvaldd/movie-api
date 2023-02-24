@@ -1,7 +1,11 @@
-import {imageLink} from "../../config";
+import {imageLink, imageNotFound} from "../../config";
 import css from "./PosterPreview.module.css"
 
 const PosterPreview = ({title, poster_path}) => {
+
+    if (!poster_path) {
+        poster_path = imageNotFound
+    }
 
     return (
         <div>

@@ -11,7 +11,7 @@ const GenresList = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(genreAction.getAll())
+        dispatch(genreAction.getGenres())
     }, [dispatch])
 
     return (

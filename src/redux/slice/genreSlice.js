@@ -8,7 +8,7 @@ const initialState = {
     loading: null
 };
 
-const getAll = createAsyncThunk(
+const getGenres = createAsyncThunk(
     'genreSlice/getAll',
     async (_, thunkAPI) =>{
         try {
@@ -27,16 +27,16 @@ const genreSlice = createSlice({
     reducers: {},
     extraReducers: builder =>
         builder
-            .addCase(getAll.fulfilled, (state, action) => {
+            .addCase(getGenres.fulfilled, (state, action) => {
                 const {genres} = action.payload
                 state.genres = genres
                 state.loading = false
             })
-            .addCase(getAll.pending, (state) => {
+            .addCase(getGenres.pending, (state) => {
                 state.loading = true
 
             })
-            .addCase(getAll.rejected, (state, action) => {
+            .addCase(getGenres.rejected, (state, action) => {
                 state.errors = action.payload
                 state.loading = false
             })
@@ -49,7 +49,7 @@ const genreSlice = createSlice({
 const {reducer:genreReducer} = genreSlice;
 
 const genreAction = {
-    getAll
+    getGenres
 }
 
 export {

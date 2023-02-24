@@ -14,7 +14,7 @@ const initialState = {
     pageSearch: null
 };
 
-const getAll = createAsyncThunk(
+const getMovies = createAsyncThunk(
     'movieSlice/getAll',
     async ({genreId, page}, thunkAPI) => {
         try {
@@ -32,6 +32,7 @@ const getById = createAsyncThunk(
     async ({id}, thunkAPI)=>{
         try {
             const {data} = await movieService.getById(id);
+            console.log(data)
             return data
 
         }catch (e) {
@@ -45,6 +46,7 @@ const getSearch = createAsyncThunk(
     async ({searchParams, page}, thunkAPI) => {
         try {
             const {data} = await movieService.getSearch(searchParams, page);
+            console.log(data)
             return data
 
         } catch (e) {
@@ -68,16 +70,16 @@ const movieSlice = createSlice({
 
     extraReducers: builder =>
         builder
-            .addCase(getAll.fulfilled, (state, action) => {
+            .addCase(getMovies.fulfilled, (state, action) => {
                 const {page, results} = action.payload
                 state.movies = results
                 state.page = page
                 state.loading = false
             })
-            .addCase(getAll.pending, (state) => {
+            .addCase(getMovies.pending, (state) => {
                 state.loading = true
             })
-            .addCase(getAll.rejected, (state, action) => {
+            .addCase(getMovies.rejected, (state, action) => {
                 state.errors = action.payload
                 state.loading = false
             })
@@ -101,6 +103,10 @@ const movieSlice = createSlice({
             .addCase(getSearch.pending, (state) => {
                 state.loading = true
             })
+            .addCase(getSearch.rejected, (state, action) => {
+                state.errors = action.payload
+                state.loading = false
+            })
             .addDefaultCase((state, action) => {
             const [actionStatus] = action.type.split('/').slice(-1);
             state.loading = actionStatus === 'pending';
@@ -111,7 +117,7 @@ const movieSlice = createSlice({
 const {reducer:movieReducer, actions: {setMovieInfo, setSearchMovie}} = movieSlice;
 
 const movieActions = {
-    getAll,
+    getMovies,
     getById,
     getSearch,
     setMovieInfo,
