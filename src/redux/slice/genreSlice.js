@@ -37,7 +37,8 @@ const genreSlice = createSlice({
 
             })
             .addCase(getGenres.rejected, (state, action) => {
-                state.errors = action.payload
+                const {status_message} = action.payload
+                state.errors = status_message
                 state.loading = false
             })
             .addDefaultCase((state, action) => {

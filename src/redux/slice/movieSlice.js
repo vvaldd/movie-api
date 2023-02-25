@@ -77,7 +77,8 @@ const movieSlice = createSlice({
                 state.loading = true
             })
             .addCase(getMovies.rejected, (state, action) => {
-                state.errors = action.payload
+                const {status_message} = action.payload
+                state.errors = status_message
                 state.loading = false
             })
             .addCase(getById.fulfilled, (state, action) => {
@@ -88,7 +89,8 @@ const movieSlice = createSlice({
                 state.loading = true
             })
             .addCase(getById.rejected, (state, action) => {
-                state.errors = action.payload
+                const {status_message} = action.payload
+                state.errors = status_message
                 state.loading = false
             })
             .addCase(getSearch.fulfilled, (state, action) => {
@@ -101,7 +103,8 @@ const movieSlice = createSlice({
                 state.loading = true
             })
             .addCase(getSearch.rejected, (state, action) => {
-                state.errors = action.payload
+                const {status_message} = action.payload
+                state.errors = status_message
                 state.loading = false
             })
             .addDefaultCase((state, action) => {
